@@ -19,14 +19,11 @@ public class VaultDirectionTracker {
         boolean inVault = mc.level.dimension().location().getPath().contains("vault");
 
         if (inVault && !hasCapturedDirection) {
-            System.out.println("[DEBUG] Player is in a vault.");
             vaultDirection = mc.player.getDirection();
             hasCapturedDirection = true;
-            System.out.println("[DEBUG] Captured vault direction: " + vaultDirection);
         }
 
         if (!inVault && hasCapturedDirection) {
-            System.out.println("[DEBUG] Player left the vault. Resetting tracker.");
             hasCapturedDirection = false;
             vaultDirection = null;
         }

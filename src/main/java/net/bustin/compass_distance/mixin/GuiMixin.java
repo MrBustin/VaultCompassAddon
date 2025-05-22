@@ -31,8 +31,8 @@ public class GuiMixin {
         int screenHeight = mc.getWindow().getGuiScaledHeight();
 
         Font font = mc.font;
-        int x = screenWidth / 2 - font.width(text) / 2;
-        int y = screenHeight - 60; // Just above the hotbar
+        int x = 10;
+        int y = screenHeight - 70;
 
         font.draw(poseStack, text, x, y, 0xFFFFFF); // white text
     }
