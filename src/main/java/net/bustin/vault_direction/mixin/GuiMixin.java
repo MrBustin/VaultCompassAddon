@@ -1,11 +1,7 @@
-package net.bustin.compass_distance.mixin;
+package net.bustin.vault_direction.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import iskallia.vault.client.render.IVaultOptions;
-import iskallia.vault.skill.ability.effect.spi.core.Cooldown;
-import iskallia.vault.skill.ability.effect.spi.core.CooldownSkill;
-import iskallia.vault.util.CooldownGuiOption;
-import net.bustin.compass_distance.logic.VaultDirectionTracker;
+import net.bustin.vault_direction.logic.VaultDirectionTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
 import net.minecraft.client.gui.Gui;
@@ -14,10 +10,6 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
-
-import java.util.Optional;
-
-import static iskallia.vault.client.VaultAbilityKeyBinding.skill;
 
 
 @Mixin(Gui.class)

@@ -1,4 +1,4 @@
-package net.bustin.compass_distance.logic;
+package net.bustin.vault_direction.logic;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.Direction;

@@ -1,13 +1,14 @@
-package net.bustin.compass_distance.logic;
+package net.bustin.vault_direction.logic;
 
-import net.bustin.compass_distance.CompassDistance;
+
+import net.bustin.vault_direction.VaultDirection;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = CompassDistance.MOD_ID, value = Dist.CLIENT)
+@Mod.EventBusSubscriber(modid = VaultDirection.MOD_ID, value = Dist.CLIENT)
 public class ClientEvents {
 
     @SubscribeEvent

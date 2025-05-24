@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "net.bustin.compass_distance.mixin",
+  "package": "net.bustin.vault_direction.mixin",
   "compatibilityLevel": "JAVA_8",
-  "refmap": "compass_distance.refmap.json",
+  "refmap": "vault_direction.refmap.json",
   "mixins": [],
   "client": [
     "GuiMixin"
