@@ -17,7 +17,7 @@ public class GuiMixin {
 
 
     @Inject(method = "renderHotbar", at = @At("TAIL"))
-    private void compassDistanceOverlay(float partialTicks, PoseStack poseStack, CallbackInfo ci) {
+    private void vaultDistanceOverlay(float partialTicks, PoseStack poseStack, CallbackInfo ci) {
         Minecraft mc = Minecraft.getInstance();
 
         if (mc.player == null || mc.level == null) return;
@@ -27,13 +27,13 @@ public class GuiMixin {
 
         String text = "Vault Direction: " + direction.getName().toUpperCase();
 
-        int screenWidth = mc.getWindow().getGuiScaledWidth();
-        int screenHeight = mc.getWindow().getGuiScaledHeight();
+
+        int guiScale = (int) mc.getWindow().getGuiScale();
         Font font = mc.font;
 
-        int x = screenWidth/2 - font.width(text) / 2;
-        int y = screenHeight - 35;;
-        font.draw(poseStack, text, x, y, 0xFFFFFF); // white text
+        int x = 8;
+        int y = (int) (100.0*3/guiScale);
+        font.draw(poseStack, text, x, y, 0xFFFFFF);
 
 
     }
