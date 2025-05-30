@@ -1,6 +1,7 @@
 package net.bustin.vault_direction.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import net.bustin.vault_direction.logic.OverlayConfig;
 import net.bustin.vault_direction.logic.VaultDirectionTracker;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Font;
@@ -26,14 +27,9 @@ public class GuiMixin {
         if (direction == null) return;
 
         String text = "Vault Direction: " + direction.getName().toUpperCase();
-
-
-        int guiScale = (int) mc.getWindow().getGuiScale();
         Font font = mc.font;
 
-        int x = 8;
-        int y = (int) (100.0*3/guiScale);
-        font.draw(poseStack, text, x, y, 0xFFFFFF);
+        font.draw(poseStack, text, OverlayConfig.x, OverlayConfig.y, 0xFFFFFF);
 
 
     }

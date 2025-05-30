@@ -2,10 +2,14 @@ package net.bustin.vault_direction;
 
 import com.mojang.logging.LogUtils;
 import net.bustin.vault_direction.logic.ClientEvents;
+import net.bustin.vault_direction.logic.KeyInputHandler;
+import net.bustin.vault_direction.logic.ModClientConfig;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.fml.loading.FMLEnvironment;
@@ -30,7 +34,10 @@ public class VaultDirection {
         Mixins.addConfiguration("vault_direction.mixins.json");
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
+            ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ModClientConfig.CLIENT);
+
             MinecraftForge.EVENT_BUS.register(ClientEvents.class);
+            MinecraftForge.EVENT_BUS.register(KeyInputHandler.class);
         }
     }
 
